@@ -1,7 +1,15 @@
-<h3>
-  Transportdienstleister anlegen:
-</h3>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<div>
+  <h3 class="styled-heading">
+    <span class="material-icons">directions_bus</span> Transportdienstleister anlegen
+  </h3>
+</div>
+
+
+
 <p> Firmenname <input type ="text" [(ngModel)]="transportProvider.companyName"> </p>
+<p> Bewertung <input type ="text" [(ngModel)]="transportProvider.companyName"> </p>
 
 <p> Firmenadresse festlegen: </p>
 
@@ -11,4 +19,7 @@
 <p> Ort <input type ="text" ng-model=""> </p>
 <p> Koordinaten <input type ="text" ng-model=""> </p>
 
-<button (click)="save()">Speichern</button>
+<div>
+  <span class="material-icons">save</span>
+  <button (click)="save()">Speichern</button>
+</div>

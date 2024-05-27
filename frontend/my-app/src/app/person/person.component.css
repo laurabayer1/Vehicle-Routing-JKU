@@ -1,0 +1,10 @@
+.styled-heading {
+  padding: 10px; /* Fügt Innenabstand um den Text herum hinzu */
+  border: 1px solid #ddd; /* Legt einen 1px-Rand um den Text herum fest, mit einer hellgrauen Farbe (#ddd) */
+  background-color: #f5f5f5; /* Legt eine hellgraue Hintergrundfarbe fest */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Fügt eine leichte Schattierung hinzu */
+  margin-bottom: 30px; /* Fügt einen Abstand unterhalb der Überschrift hinzu */
+  margin-right: 1500px; /* Halbiert die Länge des Rahmens nach rechts */
+}
+
+

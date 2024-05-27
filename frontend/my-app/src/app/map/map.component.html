@@ -1,12 +1,20 @@
-<p>map works!</p>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<h3 class="styled-heading"><span class="material-icons">map</span> Karte</h3>
+
 <form class="mapForm">
   <div class="form-group">
     <input type="text" id="mapCoords" class="form-control" required placeholder="coordinates"
            [(ngModel)]="mapCoords" name="mapCoords" (ngModelChange)="mapUpdate()">
+    <a routerLink="/map">View Map</a>
   </div>
 </form>
+
 <div class="map-container">
   <div class="map-frame">
+    <div class="styled-heading">
+    </div>
     <div id="map" class="map"></div>
+
   </div>
 </div>
+
