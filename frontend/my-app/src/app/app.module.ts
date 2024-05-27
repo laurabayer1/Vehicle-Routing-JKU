@@ -11,12 +11,14 @@ import {TransportProviderComponent} from "./transport-provider/transport-provide
 import {TransportProviderService} from "./services/tranpsortProvider.service";
 import { MatRadioModule } from '@angular/material/radio';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+import { AddressComponent } from './address/address.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PersonComponent,
-    TransportProviderComponent
+    TransportProviderComponent,
+    AddressComponent
   ],
   imports: [
     BrowserModule,
