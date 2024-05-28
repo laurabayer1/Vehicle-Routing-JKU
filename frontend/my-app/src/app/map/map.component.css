@@ -1,14 +1,6 @@
-.styled-heading {
-  padding: 10px;
-  border: 1px solid #ddd;
-  background-color: #f5f5f5;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-  margin-bottom: 30px; /* Fügt einen Abstand unterhalb der Überschrift hinzu */
-  margin-right: 1500px; /* Halbiert die Länge des Rahmens nach rechts */
-}
 
 .map {
-  height: 600px;
+  height: 400px;
   border: 2px solid black;
   margin: 50px 0; /* Fügt Abstand ober- und unterhalb der Karte hinzu */
   padding: 50px; /* Neuer Innenabstand der Stecknadel */

@@ -1,22 +1,16 @@
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<h3 class="styled-heading"><span class="material-icons">map</span> Karte</h3>
 
-<form class="mapForm">
+
+<form class="mapForm">    <!-- Fenster mit Koordinaten -->
   <div class="form-group">
     <input type="text" id="mapCoords" class="form-control" required placeholder="coordinates"
            [(ngModel)]="mapCoords" name="mapCoords" (ngModelChange)="mapUpdate()">
   </div>
 </form>
 
-<div>
-<a routerLink="/map">View Map</a>
-</div>
-
-<div class="map-container">
+<div class="map-container">  <!-- Karte -->
   <div class="map-frame">
     <div class="styled-heading">
     </div>
     <div id="map" class="map"></div>
   </div>
 </div>
-

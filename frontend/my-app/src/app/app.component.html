@@ -1,21 +1,95 @@
-<div style="text-aligner:center">
-  <h1>
-    Welcome to {{title}}
-  </h1>
-  <h2>
-    Stammdatenverwaltung
-  </h2>
-
- <app-person></app-person>
-  <app-address></app-address>
-  <app-trans></app-trans>
-
-
-  <a routerLink="/map">View Map</a>
-
-  <!-- Router Outlet that will display the component based on the current route -->
-  <router-outlet></router-outlet>
-
-
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{title}}</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      text-align: center;
+    }
+    .heading {
+      margin-bottom: 20px;
+      font-size: 36px;
+      color: #006400;
+    }
+    .subheading {
+      margin-bottom: 30px;
+      font-size: 24px;
+    }
+    .styled-heading {
+      margin-bottom: 20px;
+      font-size: 28px;
+      color: #006400;
+    }
+    .icon {
+      font-size: 36px;
+      vertical-align: middle;
+      margin-right: 10px;
+    }
+    .link {
+      display: inline-block;
+      margin-top: 20px;
+      background-color: #007bff;
+      color: #fff;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+    .link:hover {
+      background-color: #0056b3;
+    }
+    /* Rahmen-Stile für die Überschriften */
+    .frame {
+      border: 2px solid #006400;
+      border-radius: 10px;
+      padding: 10px 20px;
+      margin-bottom: 20px;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <!-- Umrahmte Überschrift "Willkommen bei Vehicle Routing" -->
+  <div class="frame">
+    <h1 class="heading">Willkommen bei {{title}}</h1>
   </div>
 
+  <!-- Umrahmte Überschrift "Stammdatenverwaltung" -->
+  <div class="frame">
+    <h2 class="subheading">Stammdatenverwaltung</h2>
+  </div>
+
+  <!--  Überschrift "Person anlegen" -->
+  <h3 class="styled-heading"><span class="material-icons icon">person</span> Person anlegen</h3>
+  <app-person></app-person>
+
+  <h2 style="font-size: 20px;">Startadresse festlegen:</h2>
+  <app-address></app-address>
+
+  <h2 style="font-size: 20px;">Zieladresse festlegen:</h2>
+  <app-address></app-address>
+
+  <!--  Überschrift "Transportdienstleister anlegen" -->
+  <h3 class="styled-heading"><span class="material-icons icon">directions_bus</span> Transportdienstleister anlegen</h3>
+  <app-trans></app-trans>
+
+  <!--  Überschrift "Karte" -->
+  <h3 class="styled-heading"><span class="material-icons icon">map</span> Karte</h3>
+  <a routerLink="/map">View Map</a> <!-- Link um Karte zu öffnen -->
+
+  <router-outlet></router-outlet> <!-- Karte -->
+</div>
+</body>
+</html>
