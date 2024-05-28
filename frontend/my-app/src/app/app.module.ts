@@ -12,6 +12,8 @@ import {TransportProviderService} from "./services/tranpsortProvider.service";
 import { MatRadioModule } from '@angular/material/radio';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { AddressComponent } from './address/address.component';
+import {AddressService} from "./services/address.service";
+
 
 @NgModule({
   declarations: [
@@ -29,7 +31,7 @@ import { AddressComponent } from './address/address.component';
     MatRadioModule,
     LeafletModule
   ],
-  providers: [PersonService, TransportProviderService],
+  providers: [PersonService, TransportProviderService, AddressService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

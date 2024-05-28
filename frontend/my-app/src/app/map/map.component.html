@@ -5,16 +5,18 @@
   <div class="form-group">
     <input type="text" id="mapCoords" class="form-control" required placeholder="coordinates"
            [(ngModel)]="mapCoords" name="mapCoords" (ngModelChange)="mapUpdate()">
-    <a routerLink="/map">View Map</a>
   </div>
 </form>
+
+<div>
+<a routerLink="/map">View Map</a>
+</div>
 
 <div class="map-container">
   <div class="map-frame">
     <div class="styled-heading">
     </div>
     <div id="map" class="map"></div>
-
   </div>
 </div>
 
