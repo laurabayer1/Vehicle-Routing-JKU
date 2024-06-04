@@ -1,6 +1,7 @@
 package com.example.routing.service;
 
 import com.example.routing.entity.Person;
+import com.example.routing.repository.AddressRepository;
 import com.example.routing.repository.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,8 +14,12 @@ public class PersonService {
     @Autowired
     private PersonRepository repository;
 
+    @Autowired
+    private AddressRepository addressRepository;
+
+
     public Person savePerson(Person person) {
-        return repository.save(person);
+        return repository.saveAndFlush(person);
     }
 
     public List<Person> getPeople() {

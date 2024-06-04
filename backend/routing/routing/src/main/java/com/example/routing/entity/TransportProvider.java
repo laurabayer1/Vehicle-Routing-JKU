@@ -7,7 +7,7 @@ public class TransportProvider {
 
     @Id
     @GeneratedValue
-    private int id;
+    private Integer id;
 
     private String companyName;
 
@@ -37,11 +37,11 @@ public class TransportProvider {
         this.companyCoordinates = companyCoordinates;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

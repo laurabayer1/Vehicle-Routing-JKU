@@ -4,6 +4,8 @@ import {error} from "@angular/compiler-cli/src/transformers/util";
 import { Person } from '../models/person';
 import {TransportProvider} from "../models/TransportProvider";
 import {TransportProviderService} from "../services/tranpsortProvider.service";
+import {Address} from "../models/address";
+import {Coordinates} from "../models/coordinates";
 
 @Component({
   selector: 'app-trans',
@@ -12,7 +14,7 @@ import {TransportProviderService} from "../services/tranpsortProvider.service";
 })
 export class TransportProviderComponent {
 
-  public transportProvider: TransportProvider = new TransportProvider();
+  public transportProvider: TransportProvider = new TransportProvider("", "", new Address(), new Coordinates());
 
   constructor(private transportProviderService: TransportProviderService){
   }

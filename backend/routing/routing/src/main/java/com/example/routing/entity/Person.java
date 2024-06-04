@@ -8,8 +8,8 @@ import java.sql.Date;
 public class Person {
 
     @Id
-    @GeneratedValue
-    private int id;
+    @GeneratedValue (strategy = GenerationType.AUTO)
+    private Integer id;
 
     private String gender;
 
@@ -66,11 +66,11 @@ public class Person {
         this.wheelchair = wheelchair;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

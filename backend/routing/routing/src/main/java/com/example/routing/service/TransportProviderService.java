@@ -14,7 +14,7 @@ public class TransportProviderService {
     private TransportProviderRepository providerRepository;
 
     public TransportProvider saveTransportProvider(TransportProvider transportProvider) {
-        return providerRepository.save(transportProvider);
+        return providerRepository.saveAndFlush(transportProvider);
     }
 
     public List<TransportProvider> getTransportProvider() {

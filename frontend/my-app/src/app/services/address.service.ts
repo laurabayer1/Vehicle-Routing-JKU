@@ -13,6 +13,7 @@ export class AddressService {
   constructor(private http: HttpClient){}
 
   createAddress(address: Address): Observable<Address> {
+    console.log(address);
     return this.http.post<Address>(environment.apiUrl + this.endpoint, address)
   }
 }

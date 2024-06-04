@@ -11,8 +11,7 @@ import {TransportProviderComponent} from "./transport-provider/transport-provide
 import {TransportProviderService} from "./services/tranpsortProvider.service";
 import { MatRadioModule } from '@angular/material/radio';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
-import { AddressComponent } from './address/address.component';
-import {AddressService} from "./services/address.service";
+
 
 
 
@@ -21,7 +20,6 @@ import {AddressService} from "./services/address.service";
     AppComponent,
     PersonComponent,
     TransportProviderComponent,
-    AddressComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +30,7 @@ import {AddressService} from "./services/address.service";
     MatRadioModule,
     LeafletModule
   ],
-  providers: [PersonService, TransportProviderService, AddressService],
+  providers: [PersonService, TransportProviderService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -11,6 +11,23 @@
 <p> Geburtstag <input type="date" [(ngModel)]="person.birthday"> </p>
 <p> Rollstuhl <input type="checkbox" [(ngModel)]="person.wheelchair"> </p>
 
+<!--  Überschrift "Startadresse" -->
+<h3 class="styled-heading"><span class="material-icons icon">person</span> Startadresse anlegen</h3>
+
+<p> Straße <input type="text" [(ngModel)]="person.startAddress.streetName"> </p>
+<p> Hausnummer <input type ="text" [(ngModel)]="person.startAddress.doorNumber"> </p>
+<p> PLZ <input type ="text" [(ngModel)]="person.startAddress.zipcode"> </p>
+<p> Ort <input type="text" [(ngModel)]="person.startAddress.city"> </p>
+
+<!--  Überschrift "Zieladresse" -->
+<h3 class="styled-heading"><span class="material-icons icon">person</span> Zieladresse anlegen</h3>
+
+<p> Straße <input type="text" [(ngModel)]="person.targetAddress.streetName"> </p>
+<p> Hausnummer <input type ="text" [(ngModel)]="person.targetAddress.doorNumber"> </p>
+<p> PLZ <input type ="text" [(ngModel)]="person.targetAddress.zipcode"> </p>
+<p> Ort <input type="text" [(ngModel)]="person.targetAddress.city"> </p>
+
+
 <div>
   <span class="material-icons">save</span>
   <button (click)="save()">Speichern</button>
