@@ -35,7 +35,7 @@ export class MapComponent implements AfterViewInit{
   }
 
   ngAfterViewInit(): void {
-    this.renderMap(14.317777777778,48.337222222222);
+    this.renderMap(14.31777777778,48.337222222222);
   }
 
   renderMap(long:number,lat:number){

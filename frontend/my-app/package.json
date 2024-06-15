@@ -27,6 +27,7 @@
     "leaflet-routing-machine": "^3.2.12",
     "node-wget": "^0.4.3",
     "openrouteservice-js": "^0.3.2",
+    "primeng": "^17.18.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "wget": "^0.0.1",

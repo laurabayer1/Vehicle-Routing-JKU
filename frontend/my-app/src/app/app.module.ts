@@ -11,6 +11,9 @@ import {TransportProviderComponent} from "./transport-provider/transport-provide
 import {TransportProviderService} from "./services/tranpsortProvider.service";
 import { MatRadioModule } from '@angular/material/radio';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+import { DropdownModule } from 'primeng/dropdown';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+
 
 
 
@@ -28,7 +31,10 @@ import { LeafletModule } from '@asymmetrik/ngx-leaflet';
     FormsModule,
     FormsModule,
     MatRadioModule,
-    LeafletModule
+    LeafletModule,
+    DropdownModule,
+    BrowserAnimationsModule,
+
   ],
   providers: [PersonService, TransportProviderService],
   bootstrap: [AppComponent]

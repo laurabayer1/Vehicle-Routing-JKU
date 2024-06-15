@@ -19,6 +19,21 @@
 <p> PLZ <input type ="text" [(ngModel)]="person.startAddress.zipcode"> </p>
 <p> Ort <input type="text" [(ngModel)]="person.startAddress.city"> </p>
 
+<!--  TODO: Button "generiere Koords" -> onClick(triggerGetCoordinates) -->
+
+
+<div class="card flex justify-content-center">
+  <p-dropdown
+    (onChange)="changeFunctionStart()"
+    [options]="coordList"
+    [(ngModel)]="startpoint"
+    placeholder="Select a City" />
+</div>
+
+
+<!--  MAP -->
+<div id="start" style="width: 100%; height: 500px;"></div>
+
 <!--  Überschrift "Zieladresse" -->
 <h3 class="styled-heading"><span class="material-icons icon">person</span> Zieladresse anlegen</h3>
 
@@ -27,6 +42,8 @@
 <p> PLZ <input type ="text" [(ngModel)]="person.targetAddress.zipcode"> </p>
 <p> Ort <input type="text" [(ngModel)]="person.targetAddress.city"> </p>
 
+<!--  MAP -->
+<div id="target" style="width: 100%; height: 500px;"></div>
 
 <div>
   <span class="material-icons">save</span>
