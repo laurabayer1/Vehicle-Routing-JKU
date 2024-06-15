@@ -28,6 +28,7 @@ dependencies {
 	implementation 'org.hibernate.validator:hibernate-validator:6.2.5.Final' // Use the latest version if available
 	implementation 'org.glassfish:jakarta.el:4.0.2' // This is required for Jakarta Expression Language
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
+	runtimeOnly 'com.oracle.database.jdbc:ojdbc11'
 }
 
 tasks.named('test') {

@@ -11,31 +11,37 @@
       margin: 0;
       padding: 0;
     }
+
     .container {
       max-width: 800px;
       margin: 50px auto;
       padding: 20px;
       text-align: center;
     }
+
     .heading {
       margin-bottom: 20px;
       font-size: 36px;
       color: #006400;
     }
+
     .subheading {
       margin-bottom: 30px;
       font-size: 24px;
     }
+
     .styled-heading {
       margin-bottom: 20px;
       font-size: 28px;
       color: #006400;
     }
+
     .icon {
       font-size: 36px;
       vertical-align: middle;
       margin-right: 10px;
     }
+
     .link {
       display: inline-block;
       margin-top: 20px;
@@ -46,9 +52,11 @@
       border-radius: 5px;
       transition: background-color 0.3s ease;
     }
+
     .link:hover {
       background-color: #0056b3;
     }
+
     /* Rahmen-Stile für die Überschriften */
     .frame {
       border: 2px solid #006400;
@@ -85,6 +93,46 @@
   <a routerLink="/map">View Map</a> <!-- Link um Karte zu öffnen -->
 
   <router-outlet></router-outlet> <!-- Karte -->
+
+
+  <div class="frame">
+    <h2 class="subheading">Transportdienstleistern inkl. Fahrzeuge</h2>
+  </div>
+
+  <div *ngFor="let vehicle of vehicles">
+    <h3>Company Name: {{ vehicle.companyName }}</h3>
+    <p>Vehicle Type: {{ vehicle.vehicleType }}</p>
+    <p>Vehicle Description: {{ vehicle.vehicleDescription }}</p>
+    <p>Can Transport Wheelchairs: {{ vehicle.canTransportWheelchairs ? 'Yes' : 'No' }}</p>
+    <p>Seating Places: {{ vehicle.seatingPlaces }}</p>
+    <div>
+      <h4>Start Coordinate:</h4>
+      <p>Latitude: {{ vehicle.startCoordinate.latitude }}</p>
+      <p>Longitude: {{ vehicle.startCoordinate.longitude }}</p>
+    </div>
+    <div>
+      <h4>End Coordinate:</h4>
+      <p>Latitude: {{ vehicle.endCoordinate.latitude }}</p>
+      <p>Longitude: {{ vehicle.endCoordinate.longitude }}</p>
+    </div>
+    <hr/>
+  </div>
+
+
+  <div class="frame">
+    <h2 class="subheading">Wageneinsatzpläne</h2>
+  </div>
+
+  <div *ngFor="let routePoint of routePoints">
+    <h3>Route Point ID: {{ routePoint.id }}</h3>
+    <p>Description: {{ routePoint.description }}</p>
+    <p>Sequence: {{ routePoint.sequenz }}</p>
+    <p>At Home: {{ routePoint.atHome ? 'Yes' : 'No' }}</p>
+    <p>Coordinates: {{ routePoint.coordinates }}</p>
+    <p>Vehicle ID: {{ routePoint.vehicle }}</p>
+  </div>
+
+
 </div>
 </body>
 </html>

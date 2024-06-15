@@ -1,0 +1,44 @@
+{
+  "routePoints": [
+    {
+      "id": 1,
+      "description": "Starting point at the company headquarters",
+      "sequenz": 1,
+      "atHome": false,
+      "coordinates": "40.712776,-74.005974",
+      "vehicle": 1
+    },
+    {
+      "id": 2,
+      "description": "Pick up at John's house",
+      "sequenz": 2,
+      "atHome": true,
+      "coordinates": "40.730610,-73.935242",
+      "vehicle": 1
+    },
+    {
+      "id": 3,
+      "description": "Drop off at the city center",
+      "sequenz": 3,
+      "atHome": false,
+      "coordinates": "40.758896,-73.985130",
+      "vehicle": 2
+    },
+    {
+      "id": 4,
+      "description": "Stop at the gas station",
+      "sequenz": 4,
+      "atHome": false,
+      "coordinates": "40.748817,-73.985428",
+      "vehicle": 3
+    },
+    {
+      "id": 5,
+      "description": "Final destination at the airport",
+      "sequenz": 5,
+      "atHome": false,
+      "coordinates": "40.641311,-73.778139",
+      "vehicle": 4
+    }
+  ]
+}
