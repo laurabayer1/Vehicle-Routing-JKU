@@ -10,7 +10,7 @@
         <module name="com.example.routing.main" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="17">
+    <bytecodeTargetLevel>
       <module name="routing.routing.main" target="17" />
       <module name="routing.routing.test" target="17" />
     </bytecodeTargetLevel>

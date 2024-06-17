@@ -1,13 +1,14 @@
 package com.example.routing.entity;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
 
 @Entity
-@Table(name = "address")
 public class Address {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue
     private Integer id;
     private String streetName;
     private String doorNumber;
@@ -15,13 +16,6 @@ public class Address {
     private String city;
 
     public Address() {
-    }
-
-    public Address(String streetName, String doorNumber, String zipcode, String city) {
-        this.streetName = streetName;
-        this.doorNumber = doorNumber;
-        this.zipcode = zipcode;
-        this.city = city;
     }
 
     public Integer getId() {

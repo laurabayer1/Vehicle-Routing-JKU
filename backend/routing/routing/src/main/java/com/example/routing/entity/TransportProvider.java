@@ -29,7 +29,7 @@ public class TransportProvider {
         this.companyCoordinates = companyCoordinates;
     }
 
-    public TransportProvider(int id, String companyName, String review, Address companyAddress, Coordinates companyCoordinates) {
+    public TransportProvider(Integer id, String companyName, String review, Address companyAddress, Coordinates companyCoordinates) {
         this.id = id;
         this.companyName = companyName;
         this.review = review;

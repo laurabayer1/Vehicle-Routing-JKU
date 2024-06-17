@@ -2,14 +2,13 @@ package com.example.routing.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
 public class Coordinates {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue
     private Integer id;
     private String longitude;
     private String latitude;
@@ -22,7 +21,7 @@ public class Coordinates {
         this.latitude = latitude;
     }
 
-    public Coordinates(int id, String longitude, String latitude) {
+    public Coordinates(Integer id, String longitude, String latitude) {
         this.id = id;
         this.longitude = longitude;
         this.latitude = latitude;

@@ -8,7 +8,7 @@ import java.sql.Date;
 public class Person {
 
     @Id
-    @GeneratedValue (strategy = GenerationType.AUTO)
+    @GeneratedValue
     private Integer id;
 
     private String gender;
@@ -52,7 +52,7 @@ public class Person {
         this.wheelchair = wheelchair;
     }
 
-    public Person(int id, String gender, String titel, String firstName, String lastName, Date birthday, Address startAddress, Address targetAddress, Coordinates startCoordinates, Coordinates targetCoordinates, boolean wheelchair) {
+    public Person(Integer id, String gender, String titel, String firstName, String lastName, Date birthday, Address startAddress, Address targetAddress, Coordinates startCoordinates, Coordinates targetCoordinates, boolean wheelchair) {
         this.id = id;
         this.gender = gender;
         this.titel = titel;
