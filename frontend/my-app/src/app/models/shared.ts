@@ -1,5 +1,6 @@
 
-// Wageneinsatzpläne
+//****************  Wageneinsatzpläne  ************************
+
 export interface RoutePoint {
   id: number,
   description: String,
@@ -27,7 +28,7 @@ export interface Person {
   needsWheelchair?: boolean;
 }
 
-// Transportdienstleister
+//****************  Transportdienstleister  ****************
 export interface Address {
   id: number | null;
   streetName: string;

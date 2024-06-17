@@ -19,15 +19,17 @@
 <p> PLZ <input type ="text" [(ngModel)]="person.startAddress.zipcode"> </p>
 <p> Ort <input type="text" [(ngModel)]="person.startAddress.city"> </p>
 
-<!--  TODO: Button "generiere Koords" -> onClick(triggerGetCoordinates) -->
-
+<p-button
+  label="Get possible Coords"
+  class="p-button-success"
+  (onClick)="triggerGetCoordinates('start')"/>
 
 <div class="card flex justify-content-center">
-  <p-dropdown
+  <p-dropdown  *ngIf="coordList && coordList.length > 0"
     (onChange)="changeFunctionStart()"
     [options]="coordList"
     [(ngModel)]="startpoint"
-    placeholder="Select a City" />
+    placeholder="Auswahlmöglichkeiten Koordinaten" />
 </div>
 
 
@@ -41,6 +43,20 @@
 <p> Hausnummer <input type ="text" [(ngModel)]="person.targetAddress.doorNumber"> </p>
 <p> PLZ <input type ="text" [(ngModel)]="person.targetAddress.zipcode"> </p>
 <p> Ort <input type="text" [(ngModel)]="person.targetAddress.city"> </p>
+
+
+<p-button
+  label="Get possible Coords"
+  class="p-button-success"
+  (onClick)="triggerGetCoordinates('target')"/>
+
+<div class="card flex justify-content-center">
+  <p-dropdown  *ngIf=" coordList2 && coordList2.length > 0"
+               (onChange)="changeFunctionTarget()"
+               [options]="coordList2"
+               [(ngModel)]="targetpoint"
+               placeholder="Auswahlmöglichkeiten Koordinaten" />
+</div>
 
 <!--  MAP -->
 <div id="target" style="width: 100%; height: 500px;"></div>

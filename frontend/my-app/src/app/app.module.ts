@@ -13,6 +13,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { DropdownModule } from 'primeng/dropdown';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {ButtonModule} from "primeng/button";
 
 
 
@@ -22,7 +23,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
   declarations: [
     AppComponent,
     PersonComponent,
-    TransportProviderComponent,
+    TransportProviderComponent
   ],
   imports: [
     BrowserModule,
@@ -34,6 +35,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     LeafletModule,
     DropdownModule,
     BrowserAnimationsModule,
+    ButtonModule
 
   ],
   providers: [PersonService, TransportProviderService],

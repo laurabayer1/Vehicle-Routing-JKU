@@ -9,7 +9,9 @@ import {Observable} from "rxjs";
 })
 export class SharedService {
 
-  // TODO: Pfad ändren, wenn REST Schnitstelle zu Julian und Sara lokal läuft
+  // TODO: Pfad ändern, wenn REST Schnittstelle zu Julian und Sara lokal läuft
+  // json-server --watch routePoints.json --port 3000
+  // json-server --watch vehicleDB.json --port 3001
   basePath_vehicle = "http://localhost:3001/vehicles" // Sara
   basePath_routepoints = "http://localhost:3000/routePoints" // Julian
 
