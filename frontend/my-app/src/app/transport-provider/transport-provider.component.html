@@ -10,7 +10,24 @@
 
 
 <!--  TODO: Button "generiere Koords" -> onClick(triggerGetCoordinates) -->
+<p-button
+  label="Mögliche Koordinaten laden"
+  class="p-button-success"
+  (onClick)="getCoordnatesTranportProvider(transportProvider.companyAddress.streetName + '' + transportProvider.companyAddress.doorNumber + ', ' + transportProvider.companyAddress.zipcode + ' ' +transportProvider.companyAddress.city)"/>
 
+
+
+<div class="card flex justify-content-center">
+  <p-dropdown  *ngIf="coordListTP && coordListTP.length > 0"
+               (onChange)="changeFunctionTP()"
+               [options]="coordListTP"
+               [(ngModel)]="startpoint"
+               placeholder="Auswahlmöglichkeiten Koordinaten" />
+</div>
+
+
+<!--  MAP -->
+<div id="start" style="width: 100%; height: 500px;"></div>
 
 
 <div>
