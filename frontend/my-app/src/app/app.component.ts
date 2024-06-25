@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {RoutePoint, VehicleT} from "./models/shared";
 import {SharedService} from "./services/shared.service";
 
+// ****************** Hauptansicht der Anwendung // ******************
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -16,8 +17,8 @@ export class AppComponent implements OnInit {
   constructor(private sharedService: SharedService) {}
 
   ngOnInit() {
-    this.fetchVehicles();
-    this.fetchRoutePoints();
+    this.fetchVehicles(); //abrufen und speichern der Fahrzeuge
+    this.fetchRoutePoints();  //abrufen und speichern der Wageneinsatzpläne
   }
 
   fetchVehicles() {

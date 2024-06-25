@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
+@Service        //Geschäftslogik
 public class PersonService {
 
     @Autowired
@@ -28,7 +28,7 @@ public class PersonService {
     public void deletePerson(int id) {
         Person p = getPersonById(id);
 
-        if (p != null) {
+        if (p != null) {    //prüft ob Person existiert bevor sie gelöscht wird
             repository.deleteById(p.getId());
         }
     }
@@ -36,7 +36,7 @@ public class PersonService {
     public Person updatePerson(int id, Person person) {
         return repository
                 .findById(id)
-                .map(value -> {
+                .map(value -> {     //wenn Person gefunden wird, werden Felder aktualisert und gespeichert
                     value.setGender(person.getGender());
                     value.setTitel(person.getTitel());
                     value.setFirstName(person.getFirstName());
@@ -50,7 +50,7 @@ public class PersonService {
 
                     return repository.save(value);
                 })
-                .orElseGet(() -> {
+                .orElseGet(() -> {      // wenn Person nicht gefunden wird, wird eine neue erstellt
                     return repository.save(person);
                 });
     }

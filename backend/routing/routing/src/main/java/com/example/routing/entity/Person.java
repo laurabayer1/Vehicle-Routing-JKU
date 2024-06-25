@@ -1,14 +1,12 @@
 package com.example.routing.entity;
-
 import jakarta.persistence.*;
-
 import java.sql.Date;
 
 @Entity
 public class Person {
 
-    @Id
-    @GeneratedValue
+    @Id // Primärschlüssel
+    @GeneratedValue // automatisch generiert
     private Integer id;
 
     private String gender;
@@ -21,7 +19,7 @@ public class Person {
     @Temporal(TemporalType.DATE)
     private Date birthday;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL)    // 1:1-Beziehung mit Adresse
     private Address startAddress;
 
     @OneToOne(cascade = CascadeType.ALL)
@@ -36,7 +34,7 @@ public class Person {
     private boolean wheelchair;
 
 
-    public Person() {
+    public Person() {   //leerer Kosntruktor für JPA erforderlich (instanzieren)
     }
 
     public Person(String gender, String titel, String firstName, String lastName, Date birthday, Address startAddress, Address targetAddress, Coordinates startCoordinates, Coordinates targetCoordinates, boolean wheelchair) {

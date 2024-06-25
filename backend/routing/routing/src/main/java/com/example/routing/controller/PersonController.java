@@ -10,19 +10,19 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Tag(name = "Person API", description = "")
-@RestController
-@CrossOrigin(origins = "*")
+@Tag(name = "Person API", description = "") // Swagger
+@RestController                             // Spring Framework
+@CrossOrigin(origins = "*")                 // Anfragen aller Domains akzeptiert
 public class PersonController {
 
-    @Autowired
+    @Autowired                              // Abhängigkeiten, Beans
     private PersonService service;
 
     @GetMapping("/person")
     @Operation(summary = "", description = "")
     public List<Person> getAllPerson() {
         return service.getPeople();
-    }
+    } //Liste von Person-Objekten
 
     @GetMapping("/person/{id}")
     @Operation(summary = "", description = "")

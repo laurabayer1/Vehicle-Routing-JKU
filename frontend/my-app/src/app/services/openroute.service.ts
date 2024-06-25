@@ -14,7 +14,7 @@ export class OpenrouteService {
 
   constructor(private http: HttpClient){}
 
-  getCoordinates(text: string): Observable<any> {
+  getCoordinates(text: string): Observable<any> { //Geokodierungsdaten von ORS-API abzurufen
     return this.http.get<any>(this.baseUrl + 'geocode/search' + `?api_key=${this.apiKey}&text=${encodeURIComponent(text)}`)
   }
 }

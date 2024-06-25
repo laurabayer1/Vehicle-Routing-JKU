@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
+@Service        //Geschäftslogik
 public class TransportProviderService {
 
     @Autowired
@@ -28,7 +28,7 @@ public class TransportProviderService {
     public void deleteTransportProvider(int id) {
         TransportProvider p = getTransportProviderById(id);
 
-        if (p != null) {
+        if (p != null) {        //prüft ob TP existiert bevor er gelöscht wird
             providerRepository.deleteById(p.getId());
         }
     }
@@ -36,7 +36,7 @@ public class TransportProviderService {
     public TransportProvider updateTransportProvider(int id, TransportProvider transportProvider) {
         return providerRepository
                 .findById(id)
-                .map(value -> {
+                .map(value -> {     //wenn TP gefunden wird, werden Felder aktualisert und gespeichert
                     value.setCompanyName(transportProvider.getCompanyName());
                     value.setReview(transportProvider.getReview());
                     value.setCompanyAddress(transportProvider.getCompanyAddress());
@@ -44,7 +44,7 @@ public class TransportProviderService {
 
                     return providerRepository.save(value);
                 })
-                .orElseGet(() -> {
+                .orElseGet(() -> {  // wenn TP nicht gefunden wird, wird ein neuer erstellt
                     return providerRepository.save(transportProvider);
                 });
     }

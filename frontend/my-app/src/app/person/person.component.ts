@@ -10,7 +10,7 @@ import {OpenrouteService} from "../services/openroute.service";
 import * as L from 'leaflet';
 
 
-type Coordinate = [number, number]; // Tuple representing [longitude, latitude]
+type Coordinate = [number, number]; // Tuple repräsentiert [longitude, latitude]
 
 interface Geometry {
   coordinates: Coordinate;
@@ -48,7 +48,7 @@ export class PersonComponent {
 
   }
 
-    public getCoordnatesStart(text: string): any {
+    public getCoordnatesStart(text: string): any {    // Ruft Coordianten für Startadresse auf und speichern in coordList
       this.openrouteService.getCoordinates(text).subscribe(
         {
           next: value => {
@@ -63,7 +63,7 @@ export class PersonComponent {
       )
     }
 
-  public getCoordnatesTarget(text: string): any {
+  public getCoordnatesTarget(text: string): any {   // Ruft Coordianten für Zieladresse auf und speichern in coordList
     this.openrouteService.getCoordinates(text).subscribe(
       {
         next: value => {
@@ -77,15 +77,13 @@ export class PersonComponent {
       }
     )
   }
-
+  // Aktualisierierte koordinaten dem person object zuweisen + auf Karte anzeigen
     changeFunctionStart(){
     console.log(this.startpoint);
     this.showMapStart = true;
     console.log(this.startpoint![0] + ' ' + this.startpoint![1])
-    //TODO:
       this.initMap(this.startpoint![1], this.startpoint![0], 'start')
 
-      //TODO: ausgewählte koordinaten dem person object zuweisen
       this.person.startCoordinates =  {longitude: this.startpoint![1], latitude: this.startpoint![0]};
     }
 
@@ -93,10 +91,8 @@ export class PersonComponent {
     console.log()
     this.showMapTarget = true;
     console.log(this.targetpoint![0] + ' ' + this.targetpoint![1])
-    //TODO:
     this.initMap(this.targetpoint![1], this.targetpoint![0], 'target')
 
-    //TODO: ausgewählte koordinaten dem person object zuweisen
     this.person.targetCoordinates =  {longitude: this.targetpoint![1], latitude: this.targetpoint![0]};
 
 
@@ -104,8 +100,6 @@ export class PersonComponent {
 
   public save(): void {
     console.log(this.person);
-
-    //console.log(this.getCoordnates(this.person.startAddress.streetName + '' + this.person.startAddress.doorNumber + ', ' + this.person.startAddress.zipcode + ' ' +this.person.startAddress.city));
 
     this.PersonService.createPerson(this.person).subscribe({
       next: (response) => {
@@ -116,27 +110,28 @@ export class PersonComponent {
       },
     });
   }
+// ******************** Extraktion Koordinaten ********************
 
   extractCoordinates(value: any): Coordinate[] {
-    const coordinatesList: Coordinate[] = [];
+    const coordinatesList: Coordinate[] = [];   // leere Liste um extrahierte Coords zu speichern
 
     for (const feature of value.features) {
       const longitude = feature.geometry.coordinates[0];
       const latitude = feature.geometry.coordinates[1];
-      coordinatesList.push([longitude, latitude]);
+      coordinatesList.push([longitude, latitude]);    //einfügen in die Liste
     }
 
     return coordinatesList;
   }
 
-  // ************** MAP *****************
+  // ************** MAP initialisieren + Marker *****************
 
   private maps: { [id: string]: L.Map } = {};
   private markers: { [id: string]: L.Marker } = {};
 
   private initMap(latitude: number, longitude: number, maptype: string): void {
     if(this.maps[maptype]){
-      this.maps[maptype].remove()
+      this.maps[maptype].remove() //entfernen der Karte und erstellen einer neuen Z.139
       delete this.maps[maptype]
     }
 
@@ -147,9 +142,9 @@ export class PersonComponent {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(this.maps[maptype]);
 
-    // Add a single marker
+    // Hinzufügen eines Markers an übergebene Koordinate
     const marker = L.marker([latitude, longitude]).addTo(this.maps[maptype]);
-    marker.bindPopup('A single point on the map');
+    marker.bindPopup('Standort');
 
   }
 
@@ -160,7 +155,7 @@ export class PersonComponent {
     }
   }
 
-  private isMapInitialized(id: string): boolean {
+  private isMapInitialized(id: string): boolean { //doppelte initialisierung der Karte ausschließen
     return this.maps[id] !== undefined;
   }
 

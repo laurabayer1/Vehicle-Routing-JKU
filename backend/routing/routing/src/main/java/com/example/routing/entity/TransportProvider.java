@@ -13,16 +13,17 @@ public class TransportProvider {
 
     private String review;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL)        // 1:1-Beziehung mit Adresse
     private Address companyAddress;
 
     @OneToOne(cascade = CascadeType.ALL)
     private Coordinates companyCoordinates;
 
-    public TransportProvider() {
+    public TransportProvider() {    //leerer Kosntruktor für JPA erforderlich (instanzieren)
     }
 
     public TransportProvider(String companyName, String review, Address companyAddress, Coordinates companyCoordinates) {
+        // ohne id um Objekt zu erstellen
         this.companyName = companyName;
         this.review = review;
         this.companyAddress = companyAddress;
@@ -30,6 +31,7 @@ public class TransportProvider {
     }
 
     public TransportProvider(Integer id, String companyName, String review, Address companyAddress, Coordinates companyCoordinates) {
+        // mit id um Objekt zu lesen
         this.id = id;
         this.companyName = companyName;
         this.review = review;

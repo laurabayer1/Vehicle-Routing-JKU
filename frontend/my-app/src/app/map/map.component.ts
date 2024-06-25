@@ -19,8 +19,8 @@ export class MapComponent implements AfterViewInit{
   mapCoords: String;
   Longitude: number;
   Latitude: number;
-  theMap:any;
-  options: Leaflet.MapOptions = {
+  theMap:any;                 // Leaflet-Karteninstanz
+  options: Leaflet.MapOptions = { //Einstellunge für Karte (Kartenzentrum, Zoom-Level)
     layers: getLayers(),
     zoom: 12,
     center: new Leaflet.LatLng(14.317777777778,48.337222222222)
@@ -34,11 +34,11 @@ export class MapComponent implements AfterViewInit{
     this.Longitude= 0;
   }
 
-  ngAfterViewInit(): void {
+  ngAfterViewInit(): void {   //Ansicht der Karte initialisert
     this.renderMap(14.31777777778,48.337222222222);
   }
 
-  renderMap(long:number,lat:number){
+  renderMap(long:number,lat:number){    // Initialisert und aktualisert Leaflet-Karte mit Coords
     if(this.theMap) {
       this.theMap.remove();
     }

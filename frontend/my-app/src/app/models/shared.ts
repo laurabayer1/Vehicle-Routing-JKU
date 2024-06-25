@@ -2,11 +2,10 @@
 //****************  Wageneinsatzpläne  ************************
 
 export interface RoutePoint {
-  id: number,
-  description: String,
-  sequenz: number,
+  routeId: number,
+  sequence: number,
   atHome: boolean,
-  coordinates: string,
+  coordinateId: string,
   vehicle: number
 }
 
@@ -55,7 +54,6 @@ export interface TransportProvider {
 }
 
 export interface VehicleT {
-  transportProvider: TransportProvider;
   companyName: string;
   vehicleType: string;
   vehicleDescription: string;

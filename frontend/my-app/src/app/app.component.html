@@ -121,11 +121,10 @@
   </div>
 
   <div *ngFor="let routePoint of routePoints">
-    <h3>Route Point ID: {{ routePoint.id }}</h3>
-    <p>Description: {{ routePoint.description }}</p>
-    <p>Sequence: {{ routePoint.sequenz }}</p>
+    <h3>Route Point ID: {{ routePoint.routeId }}</h3>
+    <p>Sequence: {{ routePoint.sequence }}</p>
     <p>At Home: {{ routePoint.atHome ? 'Yes' : 'No' }}</p>
-    <p>Coordinates: {{ routePoint.coordinates }}</p>
+    <p>Coordinates: {{ routePoint.coordinateId }}</p>
     <p>Vehicle ID: {{ routePoint.vehicle }}</p>
   </div>
 

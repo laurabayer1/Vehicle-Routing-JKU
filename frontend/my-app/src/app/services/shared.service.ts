@@ -9,15 +9,16 @@ import {Observable} from "rxjs";
 })
 export class SharedService {
 
-  // TODO: Pfad ändern, wenn REST Schnittstelle zu Julian und Sara lokal läuft
+  // REST Schnittstellen zu Julian und Sara
   // json-server --watch routePoints.json --port 3000
   // json-server --watch vehicleDB.json --port 3001
-  basePath_vehicle = "http://localhost:3001/vehicles" // Sara
-  basePath_routepoints = "http://localhost:3000/routePoints" // Julian
+  basePath_vehicle = "http://localhost:8081/vehicles" // SaraDummydaten
+  //basePath_routepoints = "http://localhost:3000/routePoints" // Julian Dummydaten
+  basePath_routepoints = "http://localhost:8080/RoutePoints"
 
   constructor(private httpClient: HttpClient, private router: Router) {
   }
-
+  //Abfragen der Daten von Transportdienstleister und Wageneinsatzplanung
   public findAllVehicles(): Observable<VehicleT[]> {
     return this.httpClient.get<VehicleT[]>(this.basePath_vehicle);
   }
